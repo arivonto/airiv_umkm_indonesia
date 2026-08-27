@@ -5,7 +5,7 @@
 [![Price: Free ($0.00)](https://img.shields.io/badge/Price-%240.00%20(Free)-green.svg)](https://airiv.id)
 [![Bundle: 7--in--1 UMKM](https://img.shields.io/badge/Bundle-7--in--1%20Indonesian%20Suite-red.svg)](https://airiv.id)
 
-The definitive, all-in-one Indonesian business, regulatory, and commerce suite built specifically for **Odoo 18.0 Community Edition**. Provides a 1-click installation package bundling all 7 specialized Indonesian localization modules into a unified executive control hub.
+The definitive, all-in-one Indonesian business, regulatory, and commerce meta-engine built specifically for **Odoo 18.0 Community Edition**. Provides a 1-click installation package bundling all 7 specialized Indonesian localization modules into a unified executive control center.
 
 ---
 
@@ -21,12 +21,31 @@ The definitive, all-in-one Indonesian business, regulatory, and commerce suite b
 
 ---
 
-## Validated Commercial Benchmark (Tested & Scrutinized)
+## Validated Commercial Benchmark (End-to-End Scrutinized)
 
-The unified meta-package was verified under live Odoo 18.0 Community conditions:
+The complete Indonesian UMKM meta-engine was verified under live Odoo 18.0 Community conditions:
 
-1. **Unified Setup Wizard**: Configured store NPWP 16/NIK `0123456789012345`, 80mm thermal receipt printing, PPN 12% compliance, and WhatsApp Sandbox Mode in a single transaction.
-2. **Cross-Module Verification**: Verified synchronized execution across POS QRIS orders, Biteship logistics tracking, SAK EMKM financial balance sheets, and PPh 21 TER payroll computation.
+1. **8-Module Registry Discovery**: Verified all 8 modules installed and operational (`airiv_tax_indonesia`, `airiv_payroll_indonesia`, `airiv_delivery_indonesia`, `airiv_payment_indonesia`, `airiv_whatsapp_indonesia`, `airiv_pos_indonesia`, `airiv_accounting_indonesia`, `airiv_umkm_indonesia`).
+2. **Master Onboarding Wizard**: Configured store NPWP 16/NIK `3171012345670001`, 80mm thermal receipt width, PPN 12% compliance, and WhatsApp Sandbox Mode in a single transaction.
+3. **Statutory Tax & Accounting**: Verified PPN 12% calculation (DPP Rp 1.000.000 $\rightarrow$ PPN Rp 120.000) and SAK EMKM Laporan Laba Rugi & Posisi Keuangan (Neraca) generation.
+4. **Payroll & PPh 21 TER**: Computed Gross Rp 15.000.000 with TER A (6% = Rp 900.000) and statutory BPJS (Rp 520.423), resulting in Take-Home-Pay of Rp 13.579.577,00.
+5. **POS & Dynamic QRIS**: Processed POS order with dynamic QRIS payment and dispatched WhatsApp digital receipt.
+6. **Logistics & Gateway Rails**: Validated Midtrans, Xendit, and Biteship automated courier synchronization.
+
+---
+
+## Installation & Odoo Configuration Guide
+
+1. **Deploy Module**:
+   Place `airiv_umkm_indonesia` inside your Odoo `custom_addons` directory (all 7 sub-modules will be resolved automatically).
+
+2. **Activate Module**:
+   * Navigate to **Apps > Update Apps List**.
+   * Search for `Indonesia UMKM All-in-One Business & Compliance Engine` and click **Activate**.
+
+3. **Run 1-Click Setup Wizard**:
+   * Open the **UMKM Center** app from the App Drawer.
+   * Click **Panduan Setup Wizard** to configure company NPWP 16/NIK, thermal receipt width, and WhatsApp mode in under 2 minutes.
 
 ---
 
