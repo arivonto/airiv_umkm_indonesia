@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_airiv_umkm_onboarding_wizard_form" model="ir.ui.view">
+            <field name="name">airiv.umkm.onboarding.wizard.form</field>
+            <field name="model">airiv.umkm.onboarding.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Panduan Konfigurasi Cepat UMKM Indonesia">
+                    <sheet>
+                        <div class="text-center mb-3">
+                            <h2 class="text-primary font-weight-bold">AIRIV Indonesia UMKM Setup Hub</h2>
+                            <p class="text-muted">Konfigurasi seluruh modul bisnis, pajak, pembayaran, logistik, dan WhatsApp dalam 1 langkah mudah.</p>
+                        </div>
+                        <group>
+                            <group string="1. Identitas Pajak &amp; Coretax">
+                                <field name="company_id"/>
+                                <field name="npwp_16" placeholder="16 Digit NIK / NPWP Perusahaan"/>
+                                <field name="enable_ppn12"/>
+                                <field name="enable_sak_emkm"/>
+                            </group>
+                            <group string="2. WhatsApp &amp; Kasir POS">
+                                <field name="whatsapp_mode" widget="radio"/>
+                                <field name="fonnte_token" password="True" invisible="whatsapp_mode != 'production'"/>
+                                <field name="thermal_width"/>
+                                <field name="enable_qris"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_apply_umkm_configuration" string="Simpan &amp; Terapkan Konfigurasi" type="object" class="btn-primary"/>
+                        <button string="Tutup" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_airiv_umkm_onboarding_wizard" model="ir.actions.act_window">
+            <field name="name">Panduan Cepat Setup UMKM</field>
+            <field name="res_model">airiv.umkm.onboarding.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

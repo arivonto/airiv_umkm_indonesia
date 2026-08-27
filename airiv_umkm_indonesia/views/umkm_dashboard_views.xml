@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_airiv_umkm_dashboard_form" model="ir.ui.view">
+            <field name="name">airiv.umkm.dashboard.form</field>
+            <field name="model">airiv.umkm.dashboard</field>
+            <field name="arch" type="xml">
+                <form string="Pusat Kendali UMKM Indonesia" create="false" delete="false">
+                    <header>
+                        <button name="%(action_airiv_umkm_onboarding_wizard)d" string="Buka Setup Wizard UMKM" type="action" class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1 class="text-primary"><field name="name"/></h1>
+                            <p class="lead text-muted">Ekosistem Tata Kelola Bisnis, Pajak, Logistik, dan Pembayaran Terpadu Indonesia</p>
+                        </div>
+                        <div class="row mt24">
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3 shadow-sm border-left-primary h-100">
+                                    <h5 class="font-weight-bold text-success">⚖️ Pajak &amp; Coretax</h5>
+                                    <p class="small text-muted mb-0">PPN 12% UU HPP, DPP Nilai Lain, e-Faktur 4.0 &amp; Pool NSFP</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3 shadow-sm border-left-info h-100">
+                                    <h5 class="font-weight-bold text-info">📊 SAK EMKM Accounting</h5>
+                                    <p class="small text-muted mb-0">Laporan Laba Rugi, Posisi Keuangan (Neraca) &amp; PPh Final 0.5%</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3 shadow-sm border-left-success h-100">
+                                    <h5 class="font-weight-bold text-primary">👥 Payroll &amp; PPh 21 TER</h5>
+                                    <p class="small text-muted mb-0">Tarif Efektif Rata-Rata (A/B/C), BPJS TK/Kes &amp; e-Bupot 21/26</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3 shadow-sm border-left-warning h-100">
+                                    <h5 class="font-weight-bold text-warning">💳 Tri-Gateway Payments</h5>
+                                    <p class="small text-muted mb-0">Midtrans Snap, Xendit Invoice &amp; PayPal REST API v2</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3 shadow-sm border-left-danger h-100">
+                                    <h5 class="font-weight-bold text-danger">🚚 Logistik Nusantara</h5>
+                                    <p class="small text-muted mb-0">Biteship &amp; RajaOngkir (10+ Kurir) &amp; Tracking Resi Realtime</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card p-3 shadow-sm border-left-secondary h-100">
+                                    <h5 class="font-weight-bold text-success">💬 WhatsApp Business</h5>
+                                    <p class="small text-muted mb-0">Fonnte REST API, WAHA Docker &amp; Offline Sandbox Engine</p>
+                                </div>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_airiv_umkm_dashboard" model="ir.actions.act_window">
+            <field name="name">Pusat Kendali UMKM</field>
+            <field name="res_model">airiv.umkm.dashboard</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>
