@@ -13,13 +13,16 @@ Modul Pembukuan dan Kepatuhan Pajak UMKM Indonesia Sesuai PP 55/2022:
 """,
     'author': 'Riv Cloud Management',
     'website': 'https://airiv.id',
+    'url': 'https://github.com/arivonto/airiv_umkm_indonesia/blob/18.0/static/description/index.html',
     'license': 'LGPL-3',
+    'images': ['static/description/banner.png', 'static/description/icon.png'],
     'price': 0.0,
     'currency': 'EUR',
     'depends': [
         'base',
         'account',
-        'mail'
+        'mail',
+        'airiv_os_core',
     ],
     'data': [
         'security/ir.model.access.csv',
