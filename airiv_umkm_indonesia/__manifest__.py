@@ -11,7 +11,7 @@ Modul Pembukuan dan Kepatuhan Pajak UMKM Indonesia Sesuai PP 55/2022:
 - Perhitungan Otomatis PPh Final 0.5% atas Kelebihan Omzet di atas Rp 500 Juta.
 - Executive Dashboard Rekonsiliasi & NTPN / Kode Billing DJP.
 """,
-    'author': 'Riv Cloud Management',
+    'author': 'AIRIV',
     'website': 'https://airiv.id',
     'url': 'https://github.com/arivonto/airiv_umkm_indonesia/blob/18.0/static/description/index.html',
     'license': 'LGPL-3',
