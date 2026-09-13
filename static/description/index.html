@@ -1,172 +1,357 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Indonesia UMKM All-in-One Master Aggregator Hub</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIRIV UMKM Indonesia - PP 55/2022 Final PPh 0.5%</title>
+  <style>
+    :root {
+      --airiv-ink: #07151d;
+      --airiv-teal: #0f766e;
+      --airiv-green: #22c55e;
+      --airiv-gold: #facc15;
+      --airiv-mint: #ccfbf1;
+      --airiv-line: #d8e7e5;
+      --airiv-muted: #5c6f78;
+      --airiv-soft: #f3faf9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #12232d;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+    .airiv-page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 18px 44px;
+    }
+    .hero {
+      overflow: hidden;
+      border-radius: 8px;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 82% 22%, rgba(34, 197, 94, 0.32), transparent 34%),
+        linear-gradient(135deg, #07151d 0%, #0c2430 48%, #103d2a 100%);
+      border: 1px solid rgba(204, 251, 241, 0.22);
+      box-shadow: 0 20px 54px rgba(7, 21, 29, 0.2);
+      padding: 42px;
+    }
+    .eyebrow {
+      color: var(--airiv-mint);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 880px;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 840px;
+      margin: 18px 0 0;
+      color: #d7edf0;
+      font-size: 18px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #e9fffb;
+      background: rgba(15, 118, 110, 0.52);
+      border: 1px solid rgba(204, 251, 241, 0.22);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .section { padding: 34px 0 0; }
+    .section-title {
+      margin: 0 0 14px;
+      color: var(--airiv-ink);
+      font-size: 26px;
+      line-height: 1.2;
+    }
+    .section-lead {
+      margin: 0 0 20px;
+      max-width: 850px;
+      color: var(--airiv-muted);
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      min-height: 100%;
+      padding: 22px;
+      border: 1px solid var(--airiv-line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(7, 21, 29, 0.06);
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--airiv-teal);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--airiv-ink);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .card p { margin: 0; color: var(--airiv-muted); }
+    .panel {
+      padding: 24px;
+      border-radius: 8px;
+      background: var(--airiv-soft);
+      border: 1px solid var(--airiv-line);
+    }
+    .flow {
+      margin: 0;
+      padding: 22px;
+      overflow-x: auto;
+      border-radius: 8px;
+      color: #d8fff9;
+      background: #07151d;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--airiv-line);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--airiv-line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      width: 34%;
+      color: var(--airiv-ink);
+      background: #eef8f7;
+    }
+    tr:last-child th, tr:last-child td { border-bottom: 0; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      color: #07151d;
+      background: var(--airiv-gold);
+      font-weight: 800;
+    }
+    .footer {
+      margin-top: 36px;
+      padding: 22px;
+      border-radius: 8px;
+      color: #d9fffb;
+      background: var(--airiv-ink);
+    }
+    .footer p { margin-bottom: 0; }
+    @media (max-width: 900px) {
+      .hero { padding: 30px 22px; }
+      h1 { font-size: 32px; }
+      .grid,
+      .steps { grid-template-columns: 1fr; }
+      th, td { display: block; width: 100%; }
+      th { border-bottom: 0; }
+    }
+  </style>
 </head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #0f172a; background-color: #ffffff; margin: 0; padding: 16px; box-sizing: border-box;">
+<body>
+  <main class="airiv-page">
+    <section class="hero">
+      <p class="eyebrow">AIRIV Indonesia UMKM Tax Ledger</p>
+      <h1>PP 55/2022 Final PPh 0.5% and Omzet Ledger for Odoo</h1>
+      <p class="lead">A practical Indonesian UMKM compliance workspace for monthly gross turnover, Rp 500 million threshold tracking, final income tax calculation, billing evidence, and executive dashboard review.</p>
+      <div class="badges">
+        <span class="badge">Odoo 18 Community</span>
+        <span class="badge">PP 55/2022</span>
+        <span class="badge">PPh Final 0.5%</span>
+        <span class="badge">Rp 500M Threshold</span>
+        <span class="badge">AIRIV</span>
+      </div>
+    </section>
 
-<!-- 1. Hero Card (Clean High-Contrast Light Theme) -->
-<div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-top: 6px solid #2563eb; border-radius: 12px; padding: 32px 24px; margin-bottom: 32px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-    <div style="display: inline-block; background-color: #2563eb; color: #ffffff; font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 20px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
-        🇮🇩 MASTER HUB UMKM INDONESIA
-    </div>
-    <h1 style="font-weight: 800; font-size: 28px; color: #0f172a; margin-top: 0; margin-bottom: 12px; line-height: 1.3;">
-        Indonesia UMKM All-in-One Master Aggregator Hub
-    </h1>
-    <p style="font-size: 15.5px; color: #334155; max-width: 850px; margin: 0 auto 20px auto; line-height: 1.65;">
-        1-Click Central Setup and Orchestration Hub for Indonesian SMBs. Aggregates DJP Tax, PPh 21 Payroll, Biteship Logistics, Tri-Gateway Payments, WhatsApp, and SAK EMKM Accounting into a unified workspace.
-    </p>
-    <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
-        <span style="display: inline-block; background-color: #e2e8f0; color: #0f172a; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px;">Odoo 18.0 Community</span>
-        <span style="display: inline-block; background-color: #e2e8f0; color: #0f172a; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px;">LGPL-3 License</span>
-        <span style="display: inline-block; background-color: #059669; color: #ffffff; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 6px;">100% Free ($0.00)</span>
-        <span style="display: inline-block; background-color: #e2e8f0; color: #0f172a; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px;">Zero External Overhead</span>
-    </div>
-</div>
+    <section class="section">
+      <h2 class="section-title">Core Capabilities</h2>
+      <p class="section-lead">AIRIV UMKM Indonesia converts manual omzet bookkeeping into a controlled Odoo workflow with tax logic, payment evidence, and dashboard clarity.</p>
+      <div class="grid">
+        <article class="card">
+          <strong>Ledger</strong>
+          <h3>Monthly omzet records</h3>
+          <p>Record fiscal year, month, taxpayer type, company, gross turnover, e-Billing code, NTPN, payment date, and status.</p>
+        </article>
+        <article class="card">
+          <strong>Compliance</strong>
+          <h3>PP 55/2022 calculation</h3>
+          <p>Compute cumulative prior turnover, non-taxable portion, taxable DPP, and PPh Final 0.5% based on taxpayer type.</p>
+        </article>
+        <article class="card">
+          <strong>Dashboard</strong>
+          <h3>Executive tax visibility</h3>
+          <p>Review year-to-date turnover, threshold utilization, taxable base, and total final tax obligation in one workspace.</p>
+        </article>
+      </div>
+    </section>
 
-<!-- 2. Showcase Banner Image -->
-<div style="text-align: center; margin-bottom: 36px;">
-    <img src="banner.png" alt="Indonesia UMKM All-in-One Master Aggregator Hub" style="border-radius: 12px; border: 1px solid #cbd5e1; max-width: 100%; height: auto; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);"/>
-</div>
+    <section class="section">
+      <h2 class="section-title">Feature & Workflow Automation</h2>
+      <div class="steps">
+        <article class="card">
+          <span class="step-number">1</span>
+          <h3>Record turnover</h3>
+          <p>Enter monthly gross turnover for the selected fiscal period and taxpayer category.</p>
+        </article>
+        <article class="card">
+          <span class="step-number">2</span>
+          <h3>Calculate tax</h3>
+          <p>Let Odoo compute prior cumulative turnover, non-taxable portion, taxable DPP, and PPh Final 0.5%.</p>
+        </article>
+        <article class="card">
+          <span class="step-number">3</span>
+          <h3>Track billing</h3>
+          <p>Move the record to billed status when e-Billing information is ready.</p>
+        </article>
+        <article class="card">
+          <span class="step-number">4</span>
+          <h3>Confirm payment</h3>
+          <p>Store NTPN and payment date to close the monthly tax evidence loop.</p>
+        </article>
+      </div>
+    </section>
 
-<!-- 3. Core Pillars -->
-<div style="margin-bottom: 36px;">
-    <div style="text-align: center; margin-bottom: 24px;">
-        <h2 style="font-weight: 800; color: #0f172a; font-size: 22px; margin-top: 0; margin-bottom: 6px;">
-            Core Capabilities & Architecture
-        </h2>
-        <p style="color: #475569; font-size: 14.5px; margin: 0;">
-            Engineered specifically for Indonesian statutory compliance and operational efficiency
-        </p>
-    </div>
+    <section class="section">
+      <h2 class="section-title">Architecture</h2>
+      <pre class="flow">Monthly UMKM Turnover Entry
+  |
+  |-- taxpayer type
+  |-- fiscal year and month
+  |-- gross turnover
+  |-- billing code and NTPN
+  v
+AIRIV UMKM Tax Calculation Layer
+  |
+  |-- cumulative prior turnover
+  |-- Rp 500 million threshold logic
+  |-- taxable DPP calculation
+  |-- PPh Final 0.5% calculation
+  v
+Dashboard and Audit Layer
+  |
+  |-- year-to-date turnover
+  |-- non-taxable portion
+  |-- taxable base
+  |-- total final income tax
+  |-- payment status tracking</pre>
+    </section>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-        
-        <div style="flex: 1 1 calc(25% - 16px); min-width: 240px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 5px solid #2563eb; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.04); box-sizing: border-box;">
-                <h4 style="font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 10px; font-size: 16px;">1-Click Master Setup</h4>
-                <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">Installs and configures all Indonesian localization modules in a single guided wizard.</p>
-                <div style="display: inline-block; background-color: #2563eb; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Quick Start
-                </div>
-            </div>
-        </div>
-        
-        <div style="flex: 1 1 calc(25% - 16px); min-width: 240px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 5px solid #059669; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.04); box-sizing: border-box;">
-                <h4 style="font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 10px; font-size: 16px;">Unified Control Panel</h4>
-                <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">Central dashboard monitoring tax compliance, pending shipments, and payment gateways.</p>
-                <div style="display: inline-block; background-color: #059669; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Dashboard UMKM
-                </div>
-            </div>
-        </div>
-        
-        <div style="flex: 1 1 calc(25% - 16px); min-width: 240px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 5px solid #7c3aed; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.04); box-sizing: border-box;">
-                <h4 style="font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 10px; font-size: 16px;">Sandbox Mock Engine</h4>
-                <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">Master toggle to switch all connected Indonesian modules between Sandbox and Live.</p>
-                <div style="display: inline-block; background-color: #7c3aed; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Sandbox Engine
-                </div>
-            </div>
-        </div>
-        
-        <div style="flex: 1 1 calc(25% - 16px); min-width: 240px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 5px solid #d97706; border-radius: 10px; padding: 20px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.04); box-sizing: border-box;">
-                <h4 style="font-weight: 800; color: #0f172a; margin-top: 0; margin-bottom: 10px; font-size: 16px;">Indonesian Defaults</h4>
-                <p style="font-size: 13.5px; color: #334155; line-height: 1.6; margin-bottom: 14px;">Pre-configures IDR currency (Rp), WIB timezone (UTC+7), and +62 phone sanitizers.</p>
-                <div style="display: inline-block; background-color: #d97706; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Localization Set
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</div>
+    <section class="section">
+      <h2 class="section-title">Technical Specifications</h2>
+      <table>
+        <tbody>
+          <tr><th>Odoo version</th><td>18.0 Community</td></tr>
+          <tr><th>Module name</th><td>airiv_umkm_indonesia</td></tr>
+          <tr><th>License</th><td>LGPL-3</td></tr>
+          <tr><th>Author</th><td>AIRIV</td></tr>
+          <tr><th>Main models</th><td>airiv.umkm.turnover, airiv.umkm.dashboard</td></tr>
+          <tr><th>Business domain</th><td>Indonesian UMKM bookkeeping and PP 55/2022 final income tax</td></tr>
+          <tr><th>Tax rate</th><td>PPh Final 0.5%</td></tr>
+          <tr><th>Individual taxpayer threshold</th><td>Rp 500,000,000 annual gross turnover</td></tr>
+          <tr><th>Dependencies</th><td>base, account, mail, airiv_os_core</td></tr>
+          <tr><th>Store assets</th><td>icon.png, banner.png, index.html</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-<!-- 4. Key Enterprise Features -->
-<div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 28px 20px; margin-bottom: 36px;">
-    <h3 style="font-weight: 800; color: #0f172a; font-size: 18px; margin-top: 0; margin-bottom: 18px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
-        Key Enterprise Features & Workflow Automation
-    </h3>
-    <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-        
-        <div style="flex: 1 1 calc(50% - 16px); min-width: 280px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #2563eb; border-radius: 8px; padding: 16px; height: 100%; box-sizing: border-box;">
-                <h5 style="font-weight: 700; color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 15px;">1. Automated Module Dependency Resolvers</h5>
-                <p style="color: #334155; font-size: 13.5px; line-height: 1.6; margin: 0;">Ensures seamless interoperability between accounting, logistics, and tax layers.</p>
-            </div>
-        </div>
-        
-        <div style="flex: 1 1 calc(50% - 16px); min-width: 280px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #2563eb; border-radius: 8px; padding: 16px; height: 100%; box-sizing: border-box;">
-                <h5 style="font-weight: 700; color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 15px;">2. Business Health Indicators</h5>
-                <p style="color: #334155; font-size: 13.5px; line-height: 1.6; margin: 0;">Live widgets for cash reserves, pending invoices, and monthly tax obligations.</p>
-            </div>
-        </div>
-        
-        <div style="flex: 1 1 calc(50% - 16px); min-width: 280px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #2563eb; border-radius: 8px; padding: 16px; height: 100%; box-sizing: border-box;">
-                <h5 style="font-weight: 700; color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 15px;">3. Zero External Fees</h5>
-                <p style="color: #334155; font-size: 13.5px; line-height: 1.6; margin: 0;">Designed to run 100% locally on free-tier infrastructure and Community editions.</p>
-            </div>
-        </div>
-        
-        <div style="flex: 1 1 calc(50% - 16px); min-width: 280px; box-sizing: border-box; margin-bottom: 16px;">
-            <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #2563eb; border-radius: 8px; padding: 16px; height: 100%; box-sizing: border-box;">
-                <h5 style="font-weight: 700; color: #0f172a; margin-top: 0; margin-bottom: 8px; font-size: 15px;">4. Simplified Onboarding</h5>
-                <p style="color: #334155; font-size: 13.5px; line-height: 1.6; margin: 0;">Guided 3-step setup tailored for non-technical business owners.</p>
-            </div>
-        </div>
-        
-    </div>
-</div>
+    <section class="section">
+      <h2 class="section-title">Installation Guidance</h2>
+      <div class="grid">
+        <article class="card">
+          <strong>Install</strong>
+          <h3>Add to Odoo addons</h3>
+          <p>Clone branch 18.0, add the module folder to your addons path, restart Odoo, update the apps list, and install the module.</p>
+        </article>
+        <article class="card">
+          <strong>Configure</strong>
+          <h3>Set taxpayer context</h3>
+          <p>Confirm company currency and use the correct taxpayer type before entering monthly turnover records.</p>
+        </article>
+        <article class="card">
+          <strong>Operate</strong>
+          <h3>Close each tax period</h3>
+          <p>Calculate the month, input e-Billing evidence, then confirm NTPN and payment date after payment.</p>
+        </article>
+      </div>
+    </section>
 
-<!-- 5. Technical Specifications Table -->
-<div style="margin-bottom: 36px;">
-    <h3 style="font-weight: 800; color: #0f172a; font-size: 18px; margin-top: 0; margin-bottom: 14px;">
-        Module Technical Specifications
-    </h3>
-    <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; border: 1px solid #cbd5e1; background-color: #ffffff;">
-            <tbody>
-                <tr style="border-bottom: 1px solid #cbd5e1;">
-                    <td style="font-weight: 700; width: 30%; background-color: #f1f5f9; color: #0f172a; padding: 12px 16px; border-right: 1px solid #cbd5e1;">Framework Compatibility</td>
-                    <td style="color: #0f172a; padding: 12px 16px;">Odoo 18.0 Community Edition (OWL 2.0 & App Drawer Native)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #cbd5e1;">
-                    <td style="font-weight: 700; background-color: #f1f5f9; color: #0f172a; padding: 12px 16px; border-right: 1px solid #cbd5e1;">License & Price</td>
-                    <td style="color: #0f172a; padding: 12px 16px;">GNU LGPL-3 &bull; <strong style="color: #059669;">Free ($0.00)</strong></td>
-                </tr>
-                <tr style="border-bottom: 1px solid #cbd5e1;">
-                    <td style="font-weight: 700; background-color: #f1f5f9; color: #0f172a; padding: 12px 16px; border-right: 1px solid #cbd5e1;">Dependencies</td>
-                    <td style="color: #0f172a; padding: 12px 16px;"><code style="background-color: #f1f5f9; color: #0f172a; padding: 2px 6px; border-radius: 4px; font-weight: 600;">base, account, sale, stock</code></td>
-                </tr>
-                <tr style="border-bottom: 1px solid #cbd5e1;">
-                    <td style="font-weight: 700; background-color: #f1f5f9; color: #0f172a; padding: 12px 16px; border-right: 1px solid #cbd5e1;">Regulatory Standards</td>
-                    <td style="color: #0f172a; padding: 12px 16px;">Kementerian Koperasi dan UKM RI, Standar Operasional Usaha Mikro Kecil Menengah</td>
-                </tr>
-                <tr>
-                    <td style="font-weight: 700; background-color: #f1f5f9; color: #0f172a; padding: 12px 16px; border-right: 1px solid #cbd5e1;">Developer</td>
-                    <td style="color: #0f172a; padding: 12px 16px;">AIRIV (<a href="https://airiv.id" target="_blank" style="color: #0284c7; text-decoration: underline; font-weight: 600;">https://airiv.id</a>)</td>
-                </tr>
-            </tbody>
+    <section class="section">
+      <h2 class="section-title">Configuration Checklist</h2>
+      <div class="panel">
+        <table>
+          <tbody>
+            <tr><th>Company</th><td>Confirm company and currency before entering tax records.</td></tr>
+            <tr><th>Taxpayer type</th><td>Choose individual taxpayer or business entity consistently for the fiscal year.</td></tr>
+            <tr><th>Monthly data</th><td>Enter gross turnover in chronological order for cleaner cumulative calculation review.</td></tr>
+            <tr><th>Billing evidence</th><td>Store e-Billing code, NTPN, and payment date after official tax payment steps.</td></tr>
+            <tr><th>Dashboard review</th><td>Open the dashboard to check year-to-date turnover, taxable base, tax obligation, and threshold utilization.</td></tr>
+          </tbody>
         </table>
-    </div>
-</div>
+      </div>
+    </section>
 
-<!-- 6. Footer -->
-<div style="text-align: center; padding: 20px 0; border-top: 1px solid #cbd5e1; color: #475569; font-size: 13.5px;">
-    <p style="margin-bottom: 8px; color: #334155;">
-        Developed for Indonesian Businesses & Enterprises &bull; <strong>AIRIV</strong>
-    </p>
-    <a href="https://airiv.id" target="_blank" style="display: inline-block; background-color: #0f172a; color: #ffffff; font-weight: 700; padding: 7px 18px; border-radius: 6px; text-decoration: none; font-size: 12.5px;">
-        Visit airiv.id
-    </a>
-</div>
+    <section class="section">
+      <h2 class="section-title">Contact Info</h2>
+      <div class="panel">
+        <table>
+          <tbody>
+            <tr><th>Author</th><td>AIRIV</td></tr>
+            <tr><th>Website</th><td>https://airiv.id</td></tr>
+            <tr><th>GitHub</th><td>https://github.com/arivonto</td></tr>
+            <tr><th>Module repository</th><td>https://github.com/arivonto/airiv_umkm_indonesia</td></tr>
+            <tr><th>Odoo series</th><td>18.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
+    <section class="footer">
+      <strong>AIRIV Odoo Apps Store Package</strong>
+      <p>This listing package includes refreshed documentation, icon, banner, and technical positioning for the AIRIV UMKM Indonesia module.</p>
+    </section>
+  </main>
 </body>
 </html>

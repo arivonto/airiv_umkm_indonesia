@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_airiv_umkm_turnover,airiv.umkm.turnover,model_airiv_umkm_turnover,base.group_user,1,1,1,1
-access_airiv_umkm_dashboard,airiv.umkm.dashboard,model_airiv_umkm_dashboard,base.group_user,1,1,1,1
